@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import stu.csub.dbproject.model.Property;
 import stu.csub.dbproject.model.Route;
+import stu.csub.dbproject.service.PropertyService;
 import stu.csub.dbproject.service.RouteService;
 
 
@@ -20,8 +22,8 @@ public class RouteController {
 	
 	@Autowired
 	private RouteService routeService;
-//	@Autowired
-//	private PropertyService propertyService;
+	@Autowired
+	private PropertyService propertyService;
 	
 	
 	//GET REQUESTS=============================================================
@@ -42,13 +44,13 @@ public class RouteController {
 	}
 	
 	//PUT REQUESTS=============================================================
-//	@RequestMapping(method=RequestMethod.PUT, value="/routes/{routeId}/properties/{propertyId}")
-//	public void addProperty(@PathVariable Integer routeId, @PathVariable Integer propertyId) {
-//		Route route = routeService.getRoute(routeId);
-//		Property property = propertyService.getProperty(propertyId);
-//		route.getProperties().add(property);
-//		routeService.saveRoute(route);
-//	}
+	@RequestMapping(method=RequestMethod.PUT, value="/routes/{routeId}/properties/{propertyId}")
+	public void addProperty(@PathVariable Integer routeId, @PathVariable Integer propertyId) {
+		Optional<Route> route = routeService.getRoute(routeId);
+		Optional<Property> property = propertyService.getProperty(propertyId);
+		route.get().getRelatedProperties().add(property.get());
+		routeService.saveRoute(route.get());
+	}
 	
 	//DELETE REQUESTS==========================================================
 	@RequestMapping("delete/routes/{routeId}")
