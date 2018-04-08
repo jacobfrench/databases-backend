@@ -30,27 +30,37 @@ public class Property {
 	private String state;
 	@Column(name = "zipcode")
 	private String zipCode;
+	@Column(name="servfreq")
+	private String serviceFrequency;
 	
 //	@OneToOne
 //	private Property nextProperty;
-//	
-//	@ManyToOne
-//	private Route route;
 	
+
+	
+
+
 
 	public Property() {}
 	
 	public Property(Integer propertyId, String propertyType, String streetAddress,
-					String city, String state, String zipCode) {
+					String city, String state, String zipCode, String serviceFrequency) {
 		this.propertyId = propertyId;
 		this.propertyType = propertyType;
 		this.streetAddress = streetAddress;
 		this.city = city;
 		this.state = state;
 		this.zipCode = zipCode;
-		
+		this.serviceFrequency = serviceFrequency;
+	}
+	
+	public String getServiceFrequency() {
+		return serviceFrequency;
 	}
 
+	public void setServiceFrequency(String serviceFrequency) {
+		this.serviceFrequency = serviceFrequency;
+	}
 
 	public Integer getPropertyId() {
 		return propertyId;
@@ -88,12 +98,6 @@ public class Property {
 	public void setZipCode(String zipCode) {
 		this.zipCode = zipCode;
 	}
-//	public Route getRoute() {
-//		return route;
-//	}
-//	public void setRoute(Route route) {
-//		this.route = route;
-//	}
 
 
 }

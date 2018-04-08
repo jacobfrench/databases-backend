@@ -3,12 +3,16 @@ package stu.csub.dbproject.model;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -22,31 +26,32 @@ public class Route {
 	@Column(name="routeid")
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer routeId;
+	
 	@Column(name="routename")
 	private String routeName;
 	
-
 	@OneToMany
 	@Column(name="properties")
 	@JsonIgnore
 	private Set<Property> properties;
+	
+
+	@OneToOne(fetch=FetchType.LAZY,
+	cascade = CascadeType.ALL,
+	mappedBy="route")
+	@JsonIgnore
+	private Technician technician;
 	
 	public Route() {}
 	
 	public Route(Integer routeId, String routeName, String techrouteId) {
 		this.routeId = routeId;
 		this.routeName = routeName;
-//		this.properties = new HashSet<Property>();
+		this.properties = new HashSet<Property>();
+		this.technician = new Technician();
 		
 	}
 
-	public Integer getrouteId() {
-		return routeId;
-	}
-
-	public void setrouteId(Integer routeId) {
-		this.routeId = routeId;
-	}
 
 	public String getRouteName() {
 		return routeName;
@@ -67,5 +72,22 @@ public class Route {
 	public void addRelatedProperty(Property property) {
 		this.properties.add(property);
 	}
+
+	public Integer getRouteId() {
+		return routeId;
+	}
+
+	public void setRouteId(Integer routeId) {
+		this.routeId = routeId;
+	}
+
+	public Technician getTechnician() {
+		return technician;
+	}
+
+	public void setTechnician(Technician technician) {
+		this.technician = technician;
+	}
+
 	
 }

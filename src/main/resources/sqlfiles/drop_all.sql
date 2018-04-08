@@ -1,0 +1,9 @@
+DROP TABLE chemicals;
+DROP TABLE contracts;
+DROP TABLE customers;
+DROP TABLE pests;
+DROP TABLE properties;
+DROP TABLE routes;
+DROP TABLE technicians;
+DROP TABLE routes_properties;
+DROP TABLE invoices;

@@ -1,0 +1,10 @@
+INSERT INTO pests VALUES(1, 'Argentine Ant', 'Arthropoda', 'Insect');
+INSERT INTO pests VALUES(2, 'Fire Ant', 'Arthropoda', 'Insect');
+INSERT INTO pests VALUES(3, 'Common Earwig', 'Arthropoda', 'Insect');
+INSERT INTO pests VALUES(4, 'Brown Rat', 'Chordata', 'Mammal');
+INSERT INTO pests VALUES(5, 'German Cockroach', 'Arthropoda', 'Insect');
+INSERT INTO pests VALUES(6, 'American Cockroach', 'Arthropoda', 'Insect');
+INSERT INTO pests VALUES(7, 'Mouse', 'Chordata', 'Mammal');
+INSERT INTO pests VALUES(8, 'Bed Bug', 'Insecta', 'Insect');
+INSERT INTO pests VALUES(9, 'Pharaoh Ant', 'Arthropoda', 'Insect');
+INSERT INTO pests VALUES(10, 'Indian Meal Moth', 'Arthropoda', 'Insect');

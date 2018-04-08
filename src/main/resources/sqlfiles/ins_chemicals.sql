@@ -1,0 +1,10 @@
+INSERT INTO chemicals VALUES(1, 'Masterline', 'Warning');
+INSERT INTO chemicals VALUES(2, 'CB-80 Aresol', 'Caution');
+INSERT INTO chemicals VALUES(3, 'Termidor SC', 'Danger');
+INSERT INTO chemicals VALUES(4, 'Bayer Cockroach Gel Bait', 'Caution');
+INSERT INTO chemicals VALUES(5, 'Boric Acid', 'Warning');
+INSERT INTO chemicals VALUES(6, 'Avitrol', 'Caution');
+INSERT INTO chemicals VALUES(7, 'Permethrin', 'Caution');
+INSERT INTO chemicals VALUES(8, 'Gentrol IGR', 'Warning');
+INSERT INTO chemicals VALUES(9, 'D-Fense Dry Ant Bait', 'Warning');
+INSERT INTO chemicals VALUES(10, 'Bifen', 'Danger');

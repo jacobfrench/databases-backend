@@ -1,5 +1,9 @@
 package stu.csub.dbproject.repository;
 
-public class TechnicianRepository {
+import org.springframework.data.repository.CrudRepository;
+
+import stu.csub.dbproject.model.Technician;
+
+public interface TechnicianRepository extends CrudRepository<Technician, Integer>{
 
 }
