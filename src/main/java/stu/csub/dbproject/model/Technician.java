@@ -1,15 +1,14 @@
 package stu.csub.dbproject.model;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "technicians")
@@ -26,8 +25,8 @@ public class Technician {
 	@Column(name="licenseType")
 	private String licenseType;
 	
-	@OneToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name="routeid", nullable=true)
+	@OneToOne(mappedBy="technician")
+	@JsonIgnore
 	private Route route;
 	
 	public Technician() {}

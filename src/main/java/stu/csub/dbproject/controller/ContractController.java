@@ -7,21 +7,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import stu.csub.dbproject.model.Customer;
-import stu.csub.dbproject.service.CustomerService;
+import stu.csub.dbproject.model.Contract;
+import stu.csub.dbproject.service.ContractService;
 
 @RestController
-public class CustomerController {
+public class ContractController {
 	
 	@Autowired
-	private CustomerService customerService;
+	private ContractService contractService;
 	
 	//GET REQUESTS=============================================================
-	@RequestMapping(method=RequestMethod.GET, value="/customers")
-	public List<Customer> getAllCustomers() {
-		return customerService.getAllCustomers();
+	@RequestMapping(method=RequestMethod.GET, value="/contracts")
+	public List<Contract> getAllContracts() {
+		return contractService.getAllContracts();
 	}
-	
-	
 
 }

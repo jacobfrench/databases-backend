@@ -2,25 +2,36 @@ package stu.csub.dbproject.model;
 
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
+@Entity
+@Table(name="customers")
 public class Customer {
+	@Id
+	@Column(name = "customerid")
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer customerId;
+	@Column(name="name")
 	private String name;
+	@Column(name="email")
 	private String email;
-	private Integer phoneNum;
+	@Column(name="phonenum")
+	private String phoneNum;
 	
-	@OneToMany
-	@Column(name="properties")
-	@JsonIgnore
+	@OneToMany(cascade=CascadeType.ALL)
 	private Set<Property> properties;
+	
 
 	public Customer() {}
 	
-	public Customer(Integer customerId, String name, String email, Integer phoneNum) {
+	public Customer(Integer customerId, String name, String email, String phoneNum) {
 		this.customerId = customerId;
 		this.name = name;
 		this.email = email;
@@ -52,14 +63,14 @@ public class Customer {
 		this.email = email;
 	}
 
-	public Integer getPhoneNum() {
+	public String getPhoneNum() {
 		return phoneNum;
 	}
 
-	public void setPhoneNum(Integer phoneNum) {
+	public void setPhoneNum(String phoneNum) {
 		this.phoneNum = phoneNum;
 	}
-	
+
 	public Set<Property> getProperties() {
 		return properties;
 	}
@@ -67,5 +78,7 @@ public class Customer {
 	public void setProperties(Set<Property> properties) {
 		this.properties = properties;
 	}
+	
+
 
 }

@@ -32,14 +32,11 @@ public class Route {
 	
 	@OneToMany
 	@Column(name="properties")
-	@JsonIgnore
 	private Set<Property> properties;
 	
 
-	@OneToOne(fetch=FetchType.LAZY,
-	cascade = CascadeType.ALL,
-	mappedBy="route")
-	@JsonIgnore
+	@OneToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="techid")
 	private Technician technician;
 	
 	public Route() {}

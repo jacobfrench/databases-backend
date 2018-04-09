@@ -1,19 +1,22 @@
 package stu.csub.dbproject.model;
 
 
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
 @Entity
 @Table(name="properties")
-
 public class Property {
 
 	@Id
@@ -36,10 +39,12 @@ public class Property {
 //	@OneToOne
 //	private Property nextProperty;
 	
-
+	@OneToMany(cascade=CascadeType.ALL)
+	private Set<Contract> contracts;
 	
-
-
+	@ManyToOne(cascade=CascadeType.ALL)
+	private Customer customer;
+	
 
 	public Property() {}
 	
@@ -52,6 +57,7 @@ public class Property {
 		this.state = state;
 		this.zipCode = zipCode;
 		this.serviceFrequency = serviceFrequency;
+		this.contracts = new HashSet<Contract>();
 	}
 	
 	public String getServiceFrequency() {
@@ -98,6 +104,12 @@ public class Property {
 	public void setZipCode(String zipCode) {
 		this.zipCode = zipCode;
 	}
-
+	public Customer getCustomer() {
+		return customer;
+	}
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
+	
 
 }

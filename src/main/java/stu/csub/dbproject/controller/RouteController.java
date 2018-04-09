@@ -58,15 +58,4 @@ public class RouteController {
 		routeService.deleteRoute(routeId);
 	}
 	
-	
-	
-	@RequestMapping("/test")
-	public String test() {
-		return "Testing...";
-	}
-	
-	
-	
-	
-
 }
