@@ -14,6 +14,11 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 
 @Entity
 @Table(name="properties")
@@ -44,7 +49,6 @@ public class Property {
 	
 	@ManyToOne(cascade=CascadeType.ALL)
 	private Customer customer;
-	
 
 	public Property() {}
 	
@@ -58,6 +62,7 @@ public class Property {
 		this.zipCode = zipCode;
 		this.serviceFrequency = serviceFrequency;
 		this.contracts = new HashSet<Contract>();
+		this.customer = new Customer();
 	}
 	
 	public String getServiceFrequency() {
@@ -104,12 +109,26 @@ public class Property {
 	public void setZipCode(String zipCode) {
 		this.zipCode = zipCode;
 	}
+	public Set<Contract> getContracts() {
+		return contracts;
+	}
+	public void setContracts(Set<Contract> contracts) {
+		this.contracts = contracts;
+	}
+
 	public Customer getCustomer() {
 		return customer;
 	}
+
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
 	}
+
+	
+	
+	
+
+	
 	
 
 }

@@ -1,3 +1,4 @@
+INSERT INTO customers VALUES (2, 'sheldonsmith@gmail.com', 'Sheldon Smith', '6615364451');
 INSERT INTO customers VALUES (2, 'joesmith@gmail.com', 'Sheldon Carr', '6615369459');
 INSERT INTO customers VALUES (3, 'granboul@att.net', 'Brad Farmer', '6619757430');
 INSERT INTO customers VALUES (4, 'mstrout@att.net', 'Edna Smith', '6616583409');

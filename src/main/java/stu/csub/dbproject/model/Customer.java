@@ -1,5 +1,6 @@
 package stu.csub.dbproject.model;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -36,6 +37,7 @@ public class Customer {
 		this.name = name;
 		this.email = email;
 		this.phoneNum = phoneNum;
+		this.properties = new HashSet<Property>();
 	}
 	
 

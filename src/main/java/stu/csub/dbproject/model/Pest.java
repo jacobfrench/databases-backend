@@ -1,9 +1,27 @@
 package stu.csub.dbproject.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="pests")
 public class Pest {
+	@Id
+	@Column(name="pestid")
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer pestId;
+	
+	@Column(name="commonname")
 	private String commonName;
+	
+	@Column(name="phylum")
 	private String phylum;
+	
+	@Column(name="class")
 	private String _class;
 	
 	public Pest() {}

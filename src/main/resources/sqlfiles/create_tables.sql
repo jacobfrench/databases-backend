@@ -8,7 +8,8 @@ CREATE TABLE IF NOT EXISTS properties(
     serviceFrequency VARCHAR(80),
     state VARCHAR(80),
     streetAddress VARCHAR(100),
-    zipCode VARCHAR(5)
+    zipCode VARCHAR(5),
+    customer_customerid INTEGER REFERENCES customer(customerid)
 
 );
 
