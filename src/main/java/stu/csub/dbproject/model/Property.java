@@ -14,6 +14,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
@@ -22,12 +24,14 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @Entity
 @Table(name="properties")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Property {
 
 	@Id
-	@Column(name = "propid")
+	@Column(name = "id")
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer propertyId;
+	@GenericGenerator(name="prop-id", strategy = "id")
+	private Integer id;
 	@Column(name = "proptype")
 	private String propertyType;
 	@Column(name = "streetaddress")
@@ -44,7 +48,7 @@ public class Property {
 //	@OneToOne
 //	private Property nextProperty;
 	
-	@OneToMany(cascade=CascadeType.ALL)
+	@OneToMany(mappedBy="property")
 	private Set<Contract> contracts;
 	
 	@ManyToOne(cascade=CascadeType.ALL)
@@ -52,9 +56,9 @@ public class Property {
 
 	public Property() {}
 	
-	public Property(Integer propertyId, String propertyType, String streetAddress,
+	public Property(Integer id, String propertyType, String streetAddress,
 					String city, String state, String zipCode, String serviceFrequency) {
-		this.propertyId = propertyId;
+		this.id = id;
 		this.propertyType = propertyType;
 		this.streetAddress = streetAddress;
 		this.city = city;
@@ -73,11 +77,11 @@ public class Property {
 		this.serviceFrequency = serviceFrequency;
 	}
 
-	public Integer getPropertyId() {
-		return propertyId;
+	public Integer getId() {
+		return id;
 	}
-	public void setPropertyId(Integer propertyId) {
-		this.propertyId = propertyId;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 	public String getPropertyType() {
 		return propertyType;

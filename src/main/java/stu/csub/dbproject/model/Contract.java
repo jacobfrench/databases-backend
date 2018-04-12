@@ -8,22 +8,22 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import org.hibernate.annotations.GenericGenerator;
+
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @Entity
 @Table(name="contracts")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Contract {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="contractid")
-	private Integer contractId;
+	@Column(name="id")
+	@GenericGenerator(name="system-uuid", strategy = "id")
+	private Integer id;
 	
 	@Column(name="salesperson")
 	private String salesPerson;
@@ -36,20 +36,20 @@ public class Contract {
 	
 	public Contract() {};
 	
-	public Contract(Integer contractId, String salesPerson, String serviceDate) {
-		this.contractId = contractId;
+	public Contract(Integer id, String salesPerson, String serviceDate) {
+		this.id = id;
 		this.salesPerson = salesPerson;
 		this.serviceDate = serviceDate;
 		this.property = new Property();
 		
 	}
 
-	public Integer getContractId() {
-		return contractId;
+	public Integer getId() {
+		return id;
 	}
 
-	public void setContractId(Integer contractId) {
-		this.contractId = contractId;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getSalesPerson() {
