@@ -12,13 +12,16 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 @Table(name="customers")
+@GenericGenerator(name="prop-id", strategy = "id")
 public class Customer {
 	@Id
-	@Column(name = "customerid")
+	@Column(name = "id")
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer customerId;
+	private Integer id;
 	@Column(name="name")
 	private String name;
 	@Column(name="email")
@@ -26,14 +29,14 @@ public class Customer {
 	@Column(name="phonenum")
 	private String phoneNum;
 	
-	@OneToMany(cascade=CascadeType.ALL)
+	@OneToMany(mappedBy="customer")
 	private Set<Property> properties;
 	
 
 	public Customer() {}
 	
-	public Customer(Integer customerId, String name, String email, String phoneNum) {
-		this.customerId = customerId;
+	public Customer(Integer id, String name, String email, String phoneNum) {
+		this.id = id;
 		this.name = name;
 		this.email = email;
 		this.phoneNum = phoneNum;
@@ -41,12 +44,12 @@ public class Customer {
 	}
 	
 
-	public Integer getCustomerId() {
-		return customerId;
+	public Integer getId() {
+		return id;
 	}
 
-	public void setCustomerId(Integer customerId) {
-		this.customerId = customerId;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getName() {
