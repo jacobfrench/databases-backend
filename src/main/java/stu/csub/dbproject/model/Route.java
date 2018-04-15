@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class Route {
 	
 	@Id
-	@Column(name="routeid")
+	@Column(name="id")
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer routeId;
 	
