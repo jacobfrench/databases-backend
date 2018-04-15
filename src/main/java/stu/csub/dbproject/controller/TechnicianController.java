@@ -23,10 +23,12 @@ public class TechnicianController {
 		return technicianService.getAllTechs();
 	}
 	
-	@RequestMapping("/techs/{techid}")
-	public Optional<Technician> getTechnician(@PathVariable Integer techId) {
-		return technicianService.getTechById(techId);
+	@RequestMapping("/techs/{id}")
+	public Optional<Technician> getTechnicianById(@PathVariable Integer id) {
+		return technicianService.getTechnicianById(id);
 	}
+	
+
 	
 	//POST REQUESTS============================================================
 	

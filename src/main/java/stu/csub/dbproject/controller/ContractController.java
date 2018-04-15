@@ -37,5 +37,12 @@ public class ContractController {
 	public void createContract(@RequestBody Contract contract) {
 		contractService.saveContract(contract);
 	}
+	
+	//DELETE REQUESTS==========================================================
+	@RequestMapping(method=RequestMethod.DELETE, value="/contracts/{id}")
+	public void deleteContract(@PathVariable Integer id) {
+		contractService.deleteContract(id);
+	}
+
 
 }

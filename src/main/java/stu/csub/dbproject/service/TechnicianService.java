@@ -21,8 +21,10 @@ public class TechnicianService {
 		technicianRepository.findAll().forEach(techs::add);
 		return techs;
 	}
-
-	public Optional<Technician> getTechById(Integer techId) {
-		return technicianRepository.findById(techId);
+	
+	public Optional<Technician> getTechnicianById(Integer id) {
+		return technicianRepository.findById(id);
 	}
+
+
 }

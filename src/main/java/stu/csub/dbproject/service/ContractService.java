@@ -31,6 +31,10 @@ public class ContractService {
 		contractRepository.save(contract);
 	}
 	
+	public void deleteContract(Integer id) {
+		contractRepository.deleteById(id);
+	}
+	
 	
 
 }
