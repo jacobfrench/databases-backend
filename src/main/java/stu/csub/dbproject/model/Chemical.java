@@ -1,26 +1,43 @@
 package stu.csub.dbproject.model;
 
+import java.util.Set;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+
+
+@Entity
+@Table(name="chemicals")
 public class Chemical {
 	
-	private Integer chemId;
+	@Id
+	@Column(name="id")
+	private Integer id;
+	@Column(name="name")
 	private String name;
+	@Column(name="signalword")
 	private String signalWord;
+	
 	
 	public Chemical() {}
 	
-	public Chemical(Integer chemId, String  name, String signalWord) {
-		this.chemId = chemId;
+	public Chemical(Integer id, String  name, String signalWord) {
+		this.id = id;
 		this.name = name;
 		this.signalWord = signalWord;
 		
 	}
 	
-	public Integer getChemId() {
-		return chemId;
+	public Integer getId() {
+		return id;
 	}
 
-	public void setChemId(Integer chemId) {
-		this.chemId = chemId;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getName() {
@@ -40,4 +57,9 @@ public class Chemical {
 	}
 
 
+	
+
 }
+
+
+

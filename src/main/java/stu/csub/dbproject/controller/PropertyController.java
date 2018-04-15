@@ -30,6 +30,7 @@ public class PropertyController {
 		return propertyService.getProperty(propertyId);
 	}
 	
+	
 	//POST REQUESTS============================================================
 	@RequestMapping(method=RequestMethod.POST, value="/properties")
 	public void addProperty(@RequestBody Property property) {

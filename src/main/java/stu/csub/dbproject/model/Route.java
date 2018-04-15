@@ -35,7 +35,7 @@ public class Route {
 	private Set<Property> properties;
 	
 
-	@OneToOne(cascade=CascadeType.ALL)
+	@OneToOne(cascade=CascadeType.MERGE)
 	@JoinColumn(name="techid")
 	private Technician technician;
 	
@@ -85,6 +85,10 @@ public class Route {
 
 	public void setTechnician(Technician technician) {
 		this.technician = technician;
+	}
+	
+	public Route findByTechId(Integer id) {
+		return null;
 	}
 
 	

@@ -15,9 +15,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class Technician {
 	
 	@Id
-	@Column(name="techid")
+	@Column(name="id")
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer techId;
+	private Integer id;
 	
 	@Column(name="name")
 	private String name;
@@ -31,19 +31,19 @@ public class Technician {
 	
 	public Technician() {}
 	
-	public Technician(Integer techId, String name, String licenseType) {
-		this.techId = techId;
+	public Technician(Integer id, String name, String licenseType) {
+		this.id = id;
 		this.name = name;
 		this.licenseType = licenseType;
 		this.route = new Route();
 	}
 
-	public Integer getTechId() {
-		return techId;
+	public Integer getId() {
+		return id;
 	}
 
-	public void setTechId(Integer techId) {
-		this.techId = techId;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getName() {

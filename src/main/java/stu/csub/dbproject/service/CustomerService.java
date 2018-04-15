@@ -20,5 +20,9 @@ public class CustomerService {
 		customerRepository.findAll().forEach(customers::add);
 		return customers;
 	}
+	
+	public void saveCustomer(Customer customer) {
+		customerRepository.save(customer);
+	}
 
 }

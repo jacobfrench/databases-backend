@@ -27,6 +27,10 @@ public class ContractService {
 		return contractRepository.findById(id);
 	}
 	
+	public void saveContract(Contract contract) {
+		contractRepository.save(contract);
+	}
+	
 	
 
 }

@@ -3,7 +3,6 @@ package stu.csub.dbproject.model;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -43,7 +42,6 @@ public class Customer {
 		this.properties = new HashSet<Property>();
 	}
 	
-
 	public Integer getId() {
 		return id;
 	}

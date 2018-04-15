@@ -1,18 +1,23 @@
 package stu.csub.dbproject.model;
 
 
+import java.util.Set;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @Entity
@@ -31,8 +36,17 @@ public class Contract {
 	@Column(name="servicedate")
 	private String serviceDate;
 	
-	@ManyToOne(cascade=CascadeType.ALL)
+	@Column(name="price")
+	private Double price;
+	
+	@ManyToOne(cascade=CascadeType.MERGE)
 	private Property property;
+	
+	@OneToMany
+	@Column(name="pests")
+	private Set<Pest> pests;
+	
+	
 	
 	public Contract() {};
 	
@@ -74,6 +88,22 @@ public class Contract {
 
 	public void setProperty(Property property) {
 		this.property = property;
+	}
+
+	public Set<Pest> getPests() {
+		return pests;
+	}
+
+	public void setPests(Set<Pest> pests) {
+		this.pests = pests;
+	}
+
+	public Double getPrice() {
+		return price;
+	}
+
+	public void setPrice(Double price) {
+		this.price = price;
 	}
 	
 	

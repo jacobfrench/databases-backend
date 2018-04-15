@@ -1,45 +1,54 @@
 package stu.csub.dbproject.model;
 
+
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="pests")
 public class Pest {
+	
 	@Id
-	@Column(name="pestid")
+	@Column(name="id")
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer pestId;
+	private Integer id;
 	
 	@Column(name="commonname")
 	private String commonName;
-	
 	@Column(name="phylum")
 	private String phylum;
 	
 	@Column(name="class")
 	private String _class;
 	
+	@ManyToMany(cascade=CascadeType.MERGE)
+	private Set<Chemical> chemicalUsed;
+	
+	
+	
 	public Pest() {}
 	
-	public Pest(Integer pestId, String commonName, String phylum, String _class) {
-		this.pestId = pestId;
+	public Pest(Integer id, String commonName, String phylum, String _class) {
+		this.id = id;
 		this.commonName = commonName;
 		this.phylum = phylum;
 		this._class = _class;
-		
 	}
 
-	public Integer getPestId() {
-		return pestId;
+	public Integer getId() {
+		return id;
 	}
 
-	public void setPestId(Integer pestId) {
-		this.pestId = pestId;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getCommonName() {
@@ -65,6 +74,18 @@ public class Pest {
 	public void set_class(String _class) {
 		this._class = _class;
 	}
+
+	public Set<Chemical> getChemicalUsed() {
+		return chemicalUsed;
+	}
+
+	public void setChemicalUsed(Set<Chemical> chemicalUsed) {
+		this.chemicalUsed = chemicalUsed;
+	}
+
+
+	
+	
 	
 
 }
