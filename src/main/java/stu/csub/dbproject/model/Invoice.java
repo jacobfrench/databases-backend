@@ -1,5 +1,7 @@
 package stu.csub.dbproject.model;
 
+import java.util.Set;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -7,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -23,6 +26,10 @@ public class Invoice {
 	
 	@ManyToOne(cascade=CascadeType.MERGE)
 	private Contract contract;
+	
+	@OneToMany
+	@Column(name="chemical")
+	private Set<Chemical> chemicalsUsed;
 
 	public Integer getId() {
 		return id;
@@ -47,6 +54,16 @@ public class Invoice {
 	public void setContract(Contract contract) {
 		this.contract = contract;
 	}
+
+	public Set<Chemical> getChemicalsUsed() {
+		return chemicalsUsed;
+	}
+
+	public void setChemicalsUsed(Set<Chemical> chemicalsUsed) {
+		this.chemicalsUsed = chemicalsUsed;
+	}
+	
+	
 	
 	
 	
