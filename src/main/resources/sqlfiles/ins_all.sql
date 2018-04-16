@@ -5,3 +5,5 @@
 \i ins_technicians.sql;
 \i ins_routes.sql;
 \i ins_routes_properties.sql;
+\i ins_contracts.sql;
+\i ins_pests_effective_chemicals.sql;

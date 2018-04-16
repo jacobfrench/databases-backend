@@ -1,0 +1,37 @@
+-- argentine ants effective chemicals
+INSERT INTO pests_effective_chemicals VALUES(1, 1);
+INSERT INTO pests_effective_chemicals VALUES(1, 3);
+INSERT INTO pests_effective_chemicals VALUES(1, 5);
+INSERT INTO pests_effective_chemicals VALUES(1, 9);
+-- fire ant effective chemicals
+INSERT INTO pests_effective_chemicals VALUES(2, 1);
+INSERT INTO pests_effective_chemicals VALUES(2, 3);
+INSERT INTO pests_effective_chemicals VALUES(2, 5);
+INSERT INTO pests_effective_chemicals VALUES(2, 9);
+-- earwig effective chemicals
+INSERT INTO pests_effective_chemicals VALUES(3, 1);
+INSERT INTO pests_effective_chemicals VALUES(3, 5);
+-- brown rat effective chemicals
+INSERT INTO pests_effective_chemicals VALUES(4, 10);
+-- german cockroach effective chemicals
+INSERT INTO pests_effective_chemicals VALUES(5, 1);
+INSERT INTO pests_effective_chemicals VALUES(5, 4);
+INSERT INTO pests_effective_chemicals VALUES(5, 5);
+INSERT INTO pests_effective_chemicals VALUES(5, 8);
+-- american cockroach effective chemicals
+INSERT INTO pests_effective_chemicals VALUES(6, 1);
+-- gray mouse effective chemicals
+INSERT INTO pests_effective_chemicals VALUES(7, 10);
+-- bed bug effective chemicals
+INSERT INTO pests_effective_chemicals VALUES(8, 1);
+INSERT INTO pests_effective_chemicals VALUES(8, 8);
+INSERT INTO pests_effective_chemicals VALUES(8, 5);
+INSERT INTO pests_effective_chemicals VALUES(8, 7);
+-- pharoh ant effective chemicals
+INSERT INTO pests_effective_chemicals VALUES(9, 1);
+INSERT INTO pests_effective_chemicals VALUES(9, 3);
+INSERT INTO pests_effective_chemicals VALUES(9, 5);
+INSERT INTO pests_effective_chemicals VALUES(9, 9);
+--indian meal moth
+INSERT INTO pests_effective_chemicals VALUES(10, 1);
+INSERT INTO pests_effective_chemicals VALUES(10, 2);
