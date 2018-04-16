@@ -5,9 +5,9 @@
 -- AND p.servfreq = 'Monthly';
 
 -- query 2----------------------------------------------------------------
--- insert into contracts values(13, 70.00, 'Tim Meadows', '2018-04-04', 9);
--- insert into contracts values(14, 81.00, 'Will Ferrel', '2018-03-29', 12);
--- insert into contracts values(15, 150.00, 'Tina Fey', '2018-04-04', 99);
+insert into contracts values(13, 70.00, 'Tim Meadows', '2018-04-04', 9);
+insert into contracts values(14, 81.00, 'Will Ferrel', '2018-03-29', 12);
+insert into contracts values(15, 150.00, 'Tina Fey', '2018-04-04', 99);
 -- insert into contracts_pests values(1,1);
 -- insert into contracts_pests values(1,2);
 -- insert into contracts_pests values(1,3);
@@ -55,5 +55,7 @@
 --     GROUP BY id
 --     HAVING SUM (price) > 80;
 -- query 9-------------------------------------------------------------------
+-- CREATE TABLE contracts_highprice AS
+--     SELECT * FROM contracts WHERE price>80; 
 
 -- query 10------------------------------------------------------------------

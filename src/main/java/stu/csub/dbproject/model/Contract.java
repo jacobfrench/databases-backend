@@ -39,6 +39,9 @@ public class Contract {
 	@Column(name="price")
 	private Double price;
 	
+	@Column(name="problemdesc")
+	private String problemDesc;
+	
 	@ManyToOne(cascade=CascadeType.MERGE)
 	private Property property;
 	
@@ -105,6 +108,15 @@ public class Contract {
 	public void setPrice(Double price) {
 		this.price = price;
 	}
+
+	public String getProblemDesc() {
+		return problemDesc;
+	}
+
+	public void setProblemDesc(String problemDesc) {
+		this.problemDesc = problemDesc;
+	}
+	
 	
 	
 

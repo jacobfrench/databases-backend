@@ -30,7 +30,7 @@ public class Pest {
 	private String _class;
 	
 	@ManyToMany(cascade=CascadeType.MERGE)
-	private Set<Chemical> chemicalUsed;
+	private Set<Chemical> effectiveChemicals;
 	
 	
 	
@@ -75,13 +75,15 @@ public class Pest {
 		this._class = _class;
 	}
 
-	public Set<Chemical> getChemicalUsed() {
-		return chemicalUsed;
+	public Set<Chemical> getEffectiveChemicals() {
+		return effectiveChemicals;
 	}
 
-	public void setChemicalUsed(Set<Chemical> chemicalUsed) {
-		this.chemicalUsed = chemicalUsed;
+	public void setEffectiveChemicals(Set<Chemical> effectiveChemicals) {
+		this.effectiveChemicals = effectiveChemicals;
 	}
+
+	
 
 
 	
