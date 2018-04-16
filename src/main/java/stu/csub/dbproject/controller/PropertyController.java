@@ -30,15 +30,12 @@ public class PropertyController {
 		return propertyService.getProperty(propertyId);
 	}
 	
-	
 	//POST REQUESTS============================================================
 	@RequestMapping(method=RequestMethod.POST, value="/properties")
 	public void addProperty(@RequestBody Property property) {
 		propertyService.saveProperty(property);
 	}
 
-	
-	
 	
 	//PUT REQUESTS=============================================================
 	@RequestMapping(method=RequestMethod.PUT, value="/properties/{propertyId")
