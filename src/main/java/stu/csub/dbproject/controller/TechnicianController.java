@@ -28,11 +28,4 @@ public class TechnicianController {
 		return technicianService.getTechnicianById(id);
 	}
 	
-
-	
-	//POST REQUESTS============================================================
-	
-
-	
-
 }

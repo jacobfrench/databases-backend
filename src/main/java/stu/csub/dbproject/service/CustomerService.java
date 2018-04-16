@@ -29,5 +29,9 @@ public class CustomerService {
 	public void saveCustomer(Customer customer) {
 		customerRepository.save(customer);
 	}
+	
+	public void updateCustomer(Customer customer) {
+		customerRepository.save(customer);
+	}
 
 }

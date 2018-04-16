@@ -30,11 +30,15 @@ public class PestController {
 		return pestService.getPestById(id);
 	}
 	
-	
 	//POST REQUESTS============================================================
 	@RequestMapping(method=RequestMethod.POST, value="/pests")
 	public void createPest(@RequestBody Pest pest) {
 		pestService.savePest(pest);
 	}
 
+	//PUT REQUESTS=============================================================
+	@RequestMapping(method=RequestMethod.PUT, value="/pests")
+	public void updatePest(@RequestBody Pest pest) {
+		pestService.savePest(pest);
+	}
 }
