@@ -23,6 +23,7 @@ public class Pest {
 	
 	@Column(name="commonname")
 	private String commonName;
+	
 	@Column(name="phylum")
 	private String phylum;
 	
@@ -31,7 +32,6 @@ public class Pest {
 	
 	@ManyToMany(cascade=CascadeType.MERGE)
 	private Set<Chemical> effectiveChemicals;
-	
 	
 	
 	public Pest() {}
@@ -82,12 +82,5 @@ public class Pest {
 	public void setEffectiveChemicals(Set<Chemical> effectiveChemicals) {
 		this.effectiveChemicals = effectiveChemicals;
 	}
-
-	
-
-
-	
-	
-	
 
 }

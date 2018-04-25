@@ -13,6 +13,8 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="customers")
 @GenericGenerator(name="prop-id", strategy = "id")
@@ -29,6 +31,7 @@ public class Customer {
 	private String phoneNum;
 	
 	@OneToMany(mappedBy="customer")
+	@JsonIgnore
 	private Set<Property> properties;
 	
 

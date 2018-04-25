@@ -45,7 +45,7 @@ public class Contract {
 	@ManyToOne(cascade=CascadeType.MERGE)
 	private Property property;
 	
-	@OneToMany
+	@ManyToMany
 	@Column(name="pests")
 	private Set<Pest> pests;
 	

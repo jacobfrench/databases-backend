@@ -28,7 +28,16 @@ public class ContractService {
 	}
 	
 	public void saveContract(Contract contract) {
-		contractRepository.save(contract);
+		//do not save contracts with duplicate properties
+		boolean willPost = true;
+		for(int i= 0; i < this.getAllContracts().size(); i++){
+			if(this.getAllContracts().get(i).getProperty().getId() == contract.getProperty().getId())
+				willPost = false;
+		}
+		if(willPost)
+			contractRepository.save(contract);
+
+		
 	}
 	
 	public void deleteContract(Integer id) {
