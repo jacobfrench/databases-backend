@@ -37,6 +37,12 @@ public class InvoiceController {
 		invoiceService.saveInvoice(invoice);
 	}
 	
+	//POST REQUESTS============================================================
+	@RequestMapping(method=RequestMethod.PUT, value="/invoices")
+	public void updateInvoice(@RequestBody Invoice invoice) {
+		invoiceService.saveInvoice(invoice);
+	}
+	
 	
 
 }

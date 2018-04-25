@@ -36,4 +36,9 @@ public class CustomerController {
 		customerService.saveCustomer(customer);
 	}
 	
+	//PUT REQUESTS=============================================================
+	@RequestMapping(method=RequestMethod.PUT, value="/customers")
+	public void updateCustomer(@RequestBody Customer customer) {
+		customerService.updateCustomer(customer);
+	}
 }
