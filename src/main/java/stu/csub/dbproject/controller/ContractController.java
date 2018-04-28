@@ -31,11 +31,22 @@ public class ContractController {
 		return contractService.getContractById(id);
 	}
 	
+	@RequestMapping(method=RequestMethod.GET, value="/opencontracts")
+	public List<Contract> getOpenContracts() {
+		return contractService.getOpenContracts(false);
+	}
+	
 	
 	//POST REQUESTS============================================================
 	@RequestMapping(method=RequestMethod.POST, value="/contracts")
 	public void createContract(@RequestBody Contract contract) {
 		contractService.saveContract(contract);
+	}
+	
+	//PUT REQUESTS=============================================================
+	@RequestMapping(method=RequestMethod.PUT, value="/contracts/{id}")
+	public void updateContract(@PathVariable Integer id) {
+		contractService.updateContract(id);
 	}
 	
 	//DELETE REQUESTS==========================================================

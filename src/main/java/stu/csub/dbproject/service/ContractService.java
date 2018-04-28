@@ -23,25 +23,32 @@ public class ContractService {
 		
 	}
 	
+	public List<Contract> getOpenContracts(boolean completed){
+		List<Contract> contracts = new ArrayList<Contract>();
+		contractRepository.getOpenContracts(completed).forEach(contracts::add);
+		return contracts;
+		
+	}
+	
 	public Optional<Contract> getContractById(Integer id) {
 		return contractRepository.findById(id);
 	}
 	
 	public void saveContract(Contract contract) {
-		//do not save contracts with duplicate properties
-		boolean willPost = true;
-		for(int i= 0; i < this.getAllContracts().size(); i++){
-			if(this.getAllContracts().get(i).getProperty().getId() == contract.getProperty().getId())
-				willPost = false;
-		}
-		if(willPost)
-			contractRepository.save(contract);
+		contractRepository.save(contract);
 
 		
 	}
 	
 	public void deleteContract(Integer id) {
 		contractRepository.deleteById(id);
+	}
+	
+	public void updateContract(Integer id) {
+		Optional<Contract> contract = contractRepository.findById(id);
+		contract.get().setCompleted(true);
+		contractRepository.save(contract.get());
+	
 	}
 	
 	

@@ -24,6 +24,9 @@ public class Invoice {
 	@Column(name="date")
 	private String date;
 	
+	@Column(name="notes")
+	private String notes;
+	
 	@ManyToOne(cascade=CascadeType.MERGE)
 	private Contract contract;
 	

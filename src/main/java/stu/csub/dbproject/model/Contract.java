@@ -42,6 +42,9 @@ public class Contract {
 	@Column(name="problemdesc")
 	private String problemDesc;
 	
+	@Column(name="completed")
+	private boolean completed;
+	
 	@ManyToOne(cascade=CascadeType.MERGE)
 	private Property property;
 	
@@ -58,6 +61,7 @@ public class Contract {
 		this.salesPerson = salesPerson;
 		this.serviceDate = serviceDate;
 		this.property = new Property();
+		this.completed = false;
 		
 	}
 
@@ -115,6 +119,14 @@ public class Contract {
 
 	public void setProblemDesc(String problemDesc) {
 		this.problemDesc = problemDesc;
+	}
+
+	public boolean isCompleted() {
+		return completed;
+	}
+
+	public void setCompleted(boolean completed) {
+		this.completed = completed;
 	}
 	
 	
