@@ -36,8 +36,7 @@ public class ContractService {
 	
 	public void saveContract(Contract contract) {
 		contractRepository.save(contract);
-
-		
+	
 	}
 	
 	public void deleteContract(Integer id) {
